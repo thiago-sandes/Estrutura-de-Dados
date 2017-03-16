@@ -83,7 +83,8 @@ int main(int argc, char *argv[])
         for(j = 0; j < N_REP; j++)
             sort(vetorordenado,TAMANHO);
         clock_gettime(CLOCK_MONOTONIC_RAW, &end);
-        uint64_t delta_us = (end.tv_sec - start.tv_sec) * 1000000 + (end.tv_nsec - start.tv_nsec) / 1000;
+        // unsigned int (alternativa)
+        unsigned long long delta_us = (end.tv_sec - start.tv_sec) * 1000000 + (end.tv_nsec - start.tv_nsec) / 1000;
         fprintf(arq,"%d\t%llu\n",TAMANHO,delta_us);
     }
     printf("\n Finalizado!\n\n");
